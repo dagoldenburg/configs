@@ -1,5 +1,8 @@
-PS1="\[\e[1;32m\]\A\[\e[m\] \[\e[1;32m\]\u\[\e[m\] \[\e[1;32m\]\w\[\e[m\]\[\e[1;32m\]\\$\[\e[m\] "
-alias §=$HOME
+PROMPT="%T %~ $ "
+plugins=(
+	zsh-autosuggestions
+)
+
 
 #-----MAVEN-----
 alias mci="mvn clean install"
@@ -26,14 +29,8 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/do/.sdkman"
-[[ -s "/Users/do/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/do/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/dagoldenburg/.sdkman"
+[[ -s "/Users/dagoldenburg/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/dagoldenburg/.sdkman/bin/sdkman-init.sh"
 
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/do/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/do/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/do/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/do/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-. "$HOME/.cargo/env"
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
